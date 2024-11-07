@@ -124,6 +124,12 @@ public class ListeSimple {
         Noeud precedentR2;
         if (r1 != tete && r2 != tete) {
             precedentR1 = getPrecedent(r1);
+
+
+            // Ajoute lignes
+
+
+
             precedentR2 = getPrecedent(r2);
             precedentR1.setSuivant(r2);
             precedentR2.setSuivant(r1);
