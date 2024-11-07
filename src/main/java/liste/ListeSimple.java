@@ -122,15 +122,20 @@ public class ListeSimple {
             return;
         Noeud precedentR1;
         Noeud precedentR2;
-        if (r1 != tete) {
+        if (r1 != tete && r2 != tete) {
             precedentR1 = getPrecedent(r1);
             precedentR2 = getPrecedent(r2);
             precedentR1.setSuivant(r2);
             precedentR2.setSuivant(r1);
-        } else {
+        } else if (r1 == tete) {
             precedentR2 = getPrecedent(r2);
             precedentR2.setSuivant(tete);
             tete = r2;
+        }
+        else {
+            precedentR1 = getPrecedent(r1);
+            precedentR1.setSuivant(tete);
+            tete = r1;
         }
         Noeud temp = r2.getSuivant();
         r2.setSuivant(r1.getSuivant());
